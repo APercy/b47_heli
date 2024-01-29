@@ -188,7 +188,7 @@ ap_heli.plane_properties = {
     _fuel_consumption_divisor = 200000,
 
     _yaw_by_mouse = true,
-    _climb_speed = 2,
+    _climb_speed = 4,
     _ground_effect_ammount_percent = 0.01,
     _min_collective = 1.0,
     _stable_collective = 1.4028,
