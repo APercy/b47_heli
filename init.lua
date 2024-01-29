@@ -189,7 +189,7 @@ ap_heli.plane_properties = {
 
     _yaw_by_mouse = true,
     _climb_speed = 4,
-    _lift_dead_zone = 0.05,
+    _lift_dead_zone = 0.1,
     _ground_effect_ammount_percent = 0.01,
     _min_collective = 1.0,
     _stable_collective = 1.4028,
