@@ -1,5 +1,18 @@
 ap_heli={}
 
+ap_heli.S = nil
+
+if(minetest.get_translator ~= nil) then
+    ap_heli.S = minetest.get_translator(minetest.get_current_modname())
+
+else
+    ap_heli.S = function ( s ) return s end
+
+end
+
+local S = ap_heli.S
+
+
 function ap_heli.register_parts_method(self)
     local pos = self.object:get_pos()
 
@@ -121,7 +134,7 @@ ap_heli.plane_properties = {
     springiness = 0.1,
     buoyancy = 1.02,
     physics = airutils.physics, --airutils.physics_floating,
-    _vehicle_name = "B47 Helicopter",
+    _vehicle_name = S("B47 Helicopter"),
     _seats = {{x=-4.2,y=9.5,z=10.52},{x=4.2,y=9.5,z=10.52},},
     _seats_rot = {0, 0, 0, 0},  --necessary when using reversed seats
     _have_copilot = true, --wil use the second position of the _seats list

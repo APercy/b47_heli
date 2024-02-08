@@ -1,20 +1,21 @@
+local S = ap_heli.S
 
 if not minetest.settings:get_bool('ap_heli.disable_craftitems') then
     -- wing
     minetest.register_craftitem("heli:rotor",{
-	    description = "B47 Helicopter rotor",
+	    description = S("B47 Helicopter rotor"),
 	    inventory_image = "heli_b47_rotor_ico.png",
     })
 -- fuselage
     minetest.register_craftitem("heli:fuselage",{
-	    description = "B47 Helicopter fuselage",
+	    description = S("B47 Helicopter fuselage"),
 	    inventory_image = "heli_b47_fuselage_ico.png",
     })
 end
 
 -- pa28
 minetest.register_craftitem("heli:heli", {
-	description = "B47 Helicopter",
+	description = S("B47 Helicopter"),
 	inventory_image = "heli_b47_ico_inv.png",
     liquids_pointable = false,
 
