@@ -104,6 +104,7 @@ ap_heli.plane_properties = {
             "airutils_metal.png", --motor
             "airutils_black2.png", --redução motor
             "airutils_painting.png", --tanques
+            "airutils_name_canvas.png",
             "airutils_painting_2.png", --estrutura empenagem
             "heli_b47_glass.png", --parabrisa
             "airutils_painting.png", --estabilizador horizontal
@@ -195,6 +196,8 @@ ap_heli.plane_properties = {
     _destroy_parts_method = ap_heli.destroy_parts_method,
     _plane_y_offset_for_bullet = 1,
     _fuel_consumption_divisor = 200000,
+    _name_color = 0,
+    _name_hor_aligment = 3.0,
 
     _yaw_by_mouse = true,
     _climb_speed = 4,
