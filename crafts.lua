@@ -14,22 +14,26 @@ if not minetest.settings:get_bool('ap_heli.disable_craftitems') then
 end
 
 -- pa28
-minetest.register_craftitem("heli:heli", {
+minetest.register_tool("heli:heli", {
 	description = S("B47 Helicopter"),
 	inventory_image = "heli_b47_ico_inv.png",
     liquids_pointable = false,
+    stack_max = 1,
 
 	on_place = function(itemstack, placer, pointed_thing)
 		if pointed_thing.type ~= "node" then
 			return
 		end
         
+        local stack_meta = itemstack:get_meta()
+        local staticdata = stack_meta:get_string("staticdata")
+
         local pointed_pos = pointed_thing.under
         --local node_below = minetest.get_node(pointed_pos).name
         --local nodedef = minetest.registered_nodes[node_below]
         
 		pointed_pos.y=pointed_pos.y+0.5
-		local heli_ent = minetest.add_entity(pointed_pos, "heli:heli")
+		local heli_ent = minetest.add_entity(pointed_pos, "heli:heli", staticdata)
 		if heli_ent and placer then
             local ent = heli_ent:get_luaentity()
             if ent then
