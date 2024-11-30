@@ -29,7 +29,10 @@ minetest.register_tool("heli:heli", {
         local staticdata = stack_meta:get_string("staticdata")
 
         local pointed_pos = pointed_thing.under
-        --local node_below = minetest.get_node(pointed_pos).name
+        local node_below = minetest.get_node(pointed_pos).name
+        if minetest.registered_nodes[node_below].drawtype == "plantlike" then
+            return
+        end
         --local nodedef = minetest.registered_nodes[node_below]
         
 		pointed_pos.y=pointed_pos.y+0.5
